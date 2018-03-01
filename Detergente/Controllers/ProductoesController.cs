@@ -13,6 +13,7 @@ namespace Detergente.Controllers
 {
     public class ProductoesController : Controller
     {
+        public int MyProperty { get; set; }
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Productoes
