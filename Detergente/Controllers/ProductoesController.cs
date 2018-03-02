@@ -92,8 +92,15 @@ namespace Detergente.Controllers
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Nombre,Descripcion,Cantidad,Precio,IdTipoProducto,FechaIngreso")] Producto producto)
+        public ActionResult Edit([Bind(Include = "Id,Nombre,Descripcion,Cantidad,Precio,IdTipoProducto,FechaIngreso,ImagePath")] Producto producto, HttpPostedFileBase file)
         {
+            if (file != null)
+            {
+                file.SaveAs(HttpContext.Server.MapPath("~/Images/")
+                                                      + file.FileName);
+                producto.ImagePath = file.FileName;
+            }
+            db.Producto.Add(producto);
             if (ModelState.IsValid)
             {
                 db.Entry(producto).State = EntityState.Modified;
@@ -137,6 +144,11 @@ namespace Detergente.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
+        }
+        public ActionResult ListadoProductos3() {
+
+            var producto = db.Producto.Include(p => p.TipoProducto);
+            return View(producto.ToList());
         }
     }
 }
