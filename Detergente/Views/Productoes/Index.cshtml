@@ -26,8 +26,10 @@
         <th>
             @Html.DisplayNameFor(model => model.Precio)
         </th>
+     
         <th>
-            @Html.DisplayNameFor(model => model.FechaIngreso)
+            @Html.DisplayNameFor(model => model.ImagePath)
+            
         </th>
         <th></th>
     </tr>
@@ -50,12 +52,14 @@
             @Html.DisplayFor(modelItem => item.Precio)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.FechaIngreso)
+
+            <img src="Images/@item.ImagePath"  height="100" width="100">
         </td>
+      
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+            @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.Id })
         </td>
     </tr>
 }

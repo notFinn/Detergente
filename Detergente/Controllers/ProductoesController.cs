@@ -13,7 +13,6 @@ namespace Detergente.Controllers
 {
     public class ProductoesController : Controller
     {
-        public int MyProperty { get; set; }
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Productoes
@@ -50,11 +49,19 @@ namespace Detergente.Controllers
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Nombre,Descripcion,Cantidad,Precio,IdTipoProducto,FechaIngreso")] Producto producto, HttpPostedFileBase upload)
+        public ActionResult Create([Bind(Include = "Id,Nombre,Descripcion,Cantidad,Precio,IdTipoProducto,FechaIngreso")] Producto producto, HttpPostedFileBase file)
         {
             if (ModelState.IsValid)
             {
-                
+
+                if (file != null)
+                {
+                    file.SaveAs(HttpContext.Server.MapPath("~/Images/")
+                                                          + file.FileName);
+                    producto.ImagePath = file.FileName;
+                }
+                db.Producto.Add(producto);
+
                 db.Producto.Add(producto);
                 db.SaveChanges();
                 return RedirectToAction("Index");

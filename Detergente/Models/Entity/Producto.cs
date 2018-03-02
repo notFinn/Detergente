@@ -22,8 +22,9 @@ namespace Detergente.Models.Entity
         public TipoProducto TipoProducto { get; set; }
 
         public DateTime? FechaIngreso { get => _dateTime; set => _dateTime = DateTime.Now; }
-       
+        public string ImagePath { get; set; }
 
     }
+
 
 }

@@ -222,6 +222,10 @@
     <Compile Include="Migrations\201803011927408_FilesOut.Designer.cs">
       <DependentUpon>201803011927408_FilesOut.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201803012309489_NewImageTest.cs" />
+    <Compile Include="Migrations\201803012309489_NewImageTest.Designer.cs">
+      <DependentUpon>201803012309489_NewImageTest.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Entity\FamiliaTipoArticulo.cs" />
@@ -404,6 +408,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Images\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -436,6 +441,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201803011927408_FilesOut.resx">
       <DependentUpon>201803011927408_FilesOut.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803012309489_NewImageTest.resx">
+      <DependentUpon>201803012309489_NewImageTest.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
