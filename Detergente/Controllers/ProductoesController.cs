@@ -49,7 +49,7 @@ namespace Detergente.Controllers
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Nombre,Descripcion,Cantidad,Precio,IdTipoProducto,FechaIngreso")] Producto producto, HttpPostedFileBase file)
+        public ActionResult Create([Bind(Include = "Id,Nombre,Descripcion,Cantidad,Precio,IdTipoProducto,FechaIngreso,Disponible")] Producto producto, HttpPostedFileBase file)
         {
             if (ModelState.IsValid)
             {
@@ -92,7 +92,7 @@ namespace Detergente.Controllers
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Nombre,Descripcion,Cantidad,Precio,IdTipoProducto,FechaIngreso,ImagePath")] Producto producto, HttpPostedFileBase file)
+        public ActionResult Edit([Bind(Include = "Id,Nombre,Descripcion,Cantidad,Precio,IdTipoProducto,FechaActualizacion,ImagePath,Disponible")] Producto producto, HttpPostedFileBase file)
         {
             if (file != null)
             {

@@ -18,7 +18,7 @@
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
     @Html.HiddenFor(model => model.Id)
 
-    @Html.HiddenFor(model => model.FechaIngreso)
+    @Html.HiddenFor(model => model.FechaActualizacion)
     @Html.HiddenFor(model => model.ImagePath)
 
     <div class="form-group">
@@ -50,6 +50,13 @@
         <div class="col-md-10">
             @Html.EditorFor(model => model.Precio, new { htmlAttributes = new { @class = "form-control" } })
             @Html.ValidationMessageFor(model => model.Precio, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Disponible, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Disponible, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Disponible, "", new { @class = "text-danger" })
         </div>
     </div>
 

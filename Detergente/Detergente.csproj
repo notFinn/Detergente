@@ -226,6 +226,14 @@
     <Compile Include="Migrations\201803012309489_NewImageTest.Designer.cs">
       <DependentUpon>201803012309489_NewImageTest.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201803021618576_ValidacionesEntity.cs" />
+    <Compile Include="Migrations\201803021618576_ValidacionesEntity.Designer.cs">
+      <DependentUpon>201803021618576_ValidacionesEntity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803021622300_DisponibleProductos.cs" />
+    <Compile Include="Migrations\201803021622300_DisponibleProductos.Designer.cs">
+      <DependentUpon>201803021622300_DisponibleProductos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Entity\FamiliaTipoArticulo.cs" />
@@ -406,6 +414,7 @@
     <Content Include="Views\Productoes\Edit.cshtml" />
     <Content Include="Views\Productoes\Index.cshtml" />
     <Content Include="Views\Productoes\ListadoProductos3.cshtml" />
+    <Content Include="Views\Productoes\DisplayTemplates\Boolean.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -445,6 +454,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201803012309489_NewImageTest.resx">
       <DependentUpon>201803012309489_NewImageTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803021618576_ValidacionesEntity.resx">
+      <DependentUpon>201803021618576_ValidacionesEntity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803021622300_DisponibleProductos.resx">
+      <DependentUpon>201803021622300_DisponibleProductos.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -28,7 +28,7 @@
                 <th>
                     @Html.DisplayNameFor(model => model.Precio)
                 </th>
-
+            
                 <th>
                     @Html.DisplayNameFor(model => model.ImagePath)
 
@@ -37,8 +37,14 @@
             </tr>
 
             @foreach (var item in Model)
-        {
-            <tr>
+            {
+                var claseFila = string.Empty;
+                if (!item.Disponible)
+                {
+                    claseFila = "danger";
+                }
+
+            <tr class="@claseFila">
                 <td>
                     @Html.DisplayFor(modelItem => item.TipoProducto.NombreTipo)
                 </td>
@@ -54,9 +60,10 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.Precio)
                 </td>
+              
                 <td>
 
-                    <img src="Images/@item.ImagePath" height="100" width="100">
+                    <img src="/Images/@item.ImagePath" height="100" width="100">
                 </td>
 
                 <td>
