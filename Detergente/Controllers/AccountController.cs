@@ -22,14 +22,7 @@ namespace Detergente.Controllers
         public AccountController()
         {
         }
-        private void MigrateShoppingCart(string email)
-        {
-            // Associate shopping cart items with logged-in user
-            var cart = CarritoCompra.GetCarrito(this.HttpContext);
-
-            cart.MigrateCart(email);
-            Session[CarritoCompra.CartSessionKey] = email;
-        }
+      
         public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager )
         {
             UserManager = userManager;

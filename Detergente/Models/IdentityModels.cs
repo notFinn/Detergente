@@ -23,7 +23,7 @@ namespace Detergente.Models
         }
     }
 
-    public partial class ApplicationDbContext : IdentityDbContext<ApplicationUser>
+    public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
@@ -33,12 +33,9 @@ namespace Detergente.Models
         public DbSet<Producto> Producto { get; set; }
         public DbSet<TipoProducto> TipoProducto { get; set; }
         public DbSet<FamiliaTipoArticulo> FamiliaTipoArticulo { get; set; }
-        public DbSet<Carrito> Carrito { get; set; }
-        public DbSet<Orden> Orden { get; set; }
-        public DbSet<DetalleOrden> DetalleOrden { get; set; }
         //Fin DbSet
 
-        public static ApplicationDbContext Create()
+        public  static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();
         }
