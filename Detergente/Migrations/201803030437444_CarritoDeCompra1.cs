@@ -1,0 +1,22 @@
+namespace Detergente.Migrations
+{
+    using System;
+    using System.Data.Entity.Migrations;
+    
+    public partial class CarritoDeCompra1 : DbMigration
+    {
+        public override void Up()
+        {
+            AddColumn("dbo.Carritoes", "Cantidad", c => c.Int(nullable: false));
+            AddColumn("dbo.DetalleOrdens", "Cantidad", c => c.Int(nullable: false));
+            AlterColumn("dbo.Productoes", "Precio", c => c.Decimal(nullable: false, precision: 18, scale: 2));
+        }
+        
+        public override void Down()
+        {
+            AlterColumn("dbo.Productoes", "Precio", c => c.Double(nullable: false));
+            DropColumn("dbo.DetalleOrdens", "Cantidad");
+            DropColumn("dbo.Carritoes", "Cantidad");
+        }
+    }
+}

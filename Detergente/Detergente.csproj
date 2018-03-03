@@ -190,6 +190,8 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CarritoCompraController.cs" />
+    <Compile Include="Controllers\CheckoutController.cs" />
     <Compile Include="Controllers\FamiliaTipoArticuloesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -234,15 +236,29 @@
     <Compile Include="Migrations\201803021622300_DisponibleProductos.Designer.cs">
       <DependentUpon>201803021622300_DisponibleProductos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201803030402188_CarritoDeCompra.cs" />
+    <Compile Include="Migrations\201803030402188_CarritoDeCompra.Designer.cs">
+      <DependentUpon>201803030402188_CarritoDeCompra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803030437444_CarritoDeCompra1.cs" />
+    <Compile Include="Migrations\201803030437444_CarritoDeCompra1.Designer.cs">
+      <DependentUpon>201803030437444_CarritoDeCompra1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Entity\Carrito.cs" />
+    <Compile Include="Models\Entity\CarritoCompra.cs" />
+    <Compile Include="Models\Entity\DetalleOrden.cs" />
     <Compile Include="Models\Entity\FamiliaTipoArticulo.cs" />
+    <Compile Include="Models\Entity\Orden.cs" />
     <Compile Include="Models\Entity\Producto.cs" />
     <Compile Include="Models\Entity\TipoProducto.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\CarritoCompraRemoveViewModel.cs" />
+    <Compile Include="ViewModels\CarritoCompraViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-datepicker.css" />
@@ -415,6 +431,9 @@
     <Content Include="Views\Productoes\Index.cshtml" />
     <Content Include="Views\Productoes\ListadoProductos3.cshtml" />
     <Content Include="Views\Productoes\DisplayTemplates\Boolean.cshtml" />
+    <Content Include="Views\CarritoCompra\Index.cshtml" />
+    <Content Include="Views\Checkout\AddressAndPayment.cshtml" />
+    <Content Include="Views\CarritoCompra\CartSummary.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -460,6 +479,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201803021622300_DisponibleProductos.resx">
       <DependentUpon>201803021622300_DisponibleProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803030402188_CarritoDeCompra.resx">
+      <DependentUpon>201803030402188_CarritoDeCompra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803030437444_CarritoDeCompra1.resx">
+      <DependentUpon>201803030437444_CarritoDeCompra1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

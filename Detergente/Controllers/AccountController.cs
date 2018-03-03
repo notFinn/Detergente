@@ -9,6 +9,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Detergente.Models;
+using Detergente.Models.Entity;
 
 namespace Detergente.Controllers
 {
@@ -21,7 +22,14 @@ namespace Detergente.Controllers
         public AccountController()
         {
         }
+        private void MigrateShoppingCart(string email)
+        {
+            // Associate shopping cart items with logged-in user
+            var cart = CarritoCompra.GetCarrito(this.HttpContext);
 
+            cart.MigrateCart(email);
+            Session[CarritoCompra.CartSessionKey] = email;
+        }
         public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager )
         {
             UserManager = userManager;

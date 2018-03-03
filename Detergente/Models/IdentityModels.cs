@@ -13,6 +13,7 @@ namespace Detergente.Models
     {
         public DateTime? FechaNacimiento { get; set; }
 
+
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
             // Tenga en cuenta que el valor de authenticationType debe coincidir con el definido en CookieAuthenticationOptions.AuthenticationType
@@ -22,7 +23,7 @@ namespace Detergente.Models
         }
     }
 
-    public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
+    public partial class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
@@ -32,6 +33,9 @@ namespace Detergente.Models
         public DbSet<Producto> Producto { get; set; }
         public DbSet<TipoProducto> TipoProducto { get; set; }
         public DbSet<FamiliaTipoArticulo> FamiliaTipoArticulo { get; set; }
+        public DbSet<Carrito> Carrito { get; set; }
+        public DbSet<Orden> Orden { get; set; }
+        public DbSet<DetalleOrden> DetalleOrden { get; set; }
         //Fin DbSet
 
         public static ApplicationDbContext Create()

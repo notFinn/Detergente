@@ -10,7 +10,7 @@ namespace Detergente.Models.Entity
     {
         private DateTime? _fechaActualizacion;
 
-        public int? Id { get; set; }
+        public int Id { get; set; }
         [StringLength(40, MinimumLength = 5, ErrorMessage = "El Nombre debe ser min 5 y maximo 40")]
         public string Nombre { get; set; }
 
@@ -18,7 +18,7 @@ namespace Detergente.Models.Entity
         [DataType(DataType.MultilineText)]
         public string Descripcion { get; set; }
         public int? Cantidad { get; set; }
-        public double Precio { get; set; }
+        public decimal Precio { get; set; }
         [Display(Name ="Tipo de Producto")]
         public int? IdTipoProducto { get; set; }
         public TipoProducto TipoProducto { get; set; }
