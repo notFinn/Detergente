@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using Detergente.Metodos;
 using Detergente.Models;
 using Detergente.Models.Entity;
 
@@ -149,6 +150,17 @@ namespace Detergente.Controllers
 
             var producto = db.Producto.Include(p => p.TipoProducto);
             return View(producto.ToList());
+        }
+        static int contador;
+         
+        [HttpPost]
+        public ActionResult Agregar(Producto producto)
+        {
+            AgregarCarro.Agregar(producto);
+
+            
+
+            return RedirectToAction("ListadoProductos3");
         }
     }
 }
