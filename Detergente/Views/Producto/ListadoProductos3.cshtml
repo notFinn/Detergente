@@ -1,0 +1,42 @@
+﻿@model IEnumerable<Models.Producto>
+
+
+
+
+@{
+    ViewBag.Title = "Listado Producto";
+}
+<div>
+    <h2 class="h2">Listado Producto</h2>
+</div>
+@using (Html.BeginForm("Agregar", "Producto", FormMethod.Post))
+{
+
+    <div class="container">
+        <div class="row">
+            <ul class="thumbnails">
+                @foreach (var item in Model)
+    {
+            <li class="col-xs-6 col-lg-3">
+                <div class="thumbnail">
+                    <img src="/Images/@item.ImagePath" height="300" width="300">
+
+                    @Html.HiddenFor(modelItem => item.Id, new { @Id = "Id", @Name = "Id" })
+                    @Html.HiddenFor(modelItem => item.Cantidad, new { @Id = "Cantidad", @Name = "Cantidad" })
+                    @Html.HiddenFor(modelItem => item.ImagePath, new { @Id = "ImagePath", @Name = "ImagePath" })
+                    <h3>@Html.DisplayFor(modelItem => item.Nombre)</h3>
+                    @Html.HiddenFor(modelItem => item.Nombre, new { @Id = "Nombre", @Name = "Nombre" })
+                    <p>  @Html.DisplayFor(modelItem => item.Descripcion)</p>
+                    @Html.HiddenFor(modelItem => item.Descripcion, new { @Id = "Descripcion", @Name = "Descripcion" })
+                    <h4> $ @Html.DisplayFor(modelItem => item.Precio)</h4>
+                    @Html.HiddenFor(modelItem => item.Precio, new { @Id = "Precio", @Name = "Precio" })
+                    <p>
+                        <input type="submit" value="Agregar" id="Agregar" class="btn btn-default" />
+                    </p>
+                </div>
+            </li>
+}
+            </ul>
+        </div>
+    </div>
+}

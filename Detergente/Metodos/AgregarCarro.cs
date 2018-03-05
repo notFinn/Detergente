@@ -1,8 +1,6 @@
-﻿using Detergente.Models.Entity;
+﻿using Models;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 
 namespace Detergente.Metodos
 {
@@ -18,6 +16,9 @@ namespace Detergente.Metodos
             var carrito = new Carrito(contar, producto.Id, 1, DateTime.Now, producto);
             Lista.Add(carrito);
         }
+        public static List<Carrito> Listar() {
 
+            return null;
+        }
     }
 }

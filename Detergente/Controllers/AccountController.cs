@@ -9,7 +9,8 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Detergente.Models;
-using Detergente.Models.Entity;
+using Service.Auth;
+using Models;
 
 namespace Detergente.Controllers
 {

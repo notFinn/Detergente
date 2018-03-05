@@ -190,70 +190,16 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\FamiliaTipoArticuloesController.cs" />
+    <Compile Include="Controllers\FamiliaTipoArticuloController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="Controllers\ProductoesController.cs" />
-    <Compile Include="Controllers\TipoProductoesController.cs" />
+    <Compile Include="Controllers\ProductoController.cs" />
+    <Compile Include="Controllers\TipoProductoController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Metodos\AgregarCarro.cs" />
-    <Compile Include="Migrations\201803010240136_PrimeraMigracion.cs" />
-    <Compile Include="Migrations\201803010240136_PrimeraMigracion.Designer.cs">
-      <DependentUpon>201803010240136_PrimeraMigracion.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201803010439470_Productos.cs" />
-    <Compile Include="Migrations\201803010439470_Productos.Designer.cs">
-      <DependentUpon>201803010439470_Productos.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201803010549074_ForeingKey_FamiliaArticulo.cs" />
-    <Compile Include="Migrations\201803010549074_ForeingKey_FamiliaArticulo.Designer.cs">
-      <DependentUpon>201803010549074_ForeingKey_FamiliaArticulo.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201803010808176_01032018_4_57_RodrigoB.cs" />
-    <Compile Include="Migrations\201803010808176_01032018_4_57_RodrigoB.Designer.cs">
-      <DependentUpon>201803010808176_01032018_4_57_RodrigoB.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201803011912019_Files.cs" />
-    <Compile Include="Migrations\201803011912019_Files.Designer.cs">
-      <DependentUpon>201803011912019_Files.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201803011927408_FilesOut.cs" />
-    <Compile Include="Migrations\201803011927408_FilesOut.Designer.cs">
-      <DependentUpon>201803011927408_FilesOut.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201803012309489_NewImageTest.cs" />
-    <Compile Include="Migrations\201803012309489_NewImageTest.Designer.cs">
-      <DependentUpon>201803012309489_NewImageTest.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201803021618576_ValidacionesEntity.cs" />
-    <Compile Include="Migrations\201803021618576_ValidacionesEntity.Designer.cs">
-      <DependentUpon>201803021618576_ValidacionesEntity.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201803021622300_DisponibleProductos.cs" />
-    <Compile Include="Migrations\201803021622300_DisponibleProductos.Designer.cs">
-      <DependentUpon>201803021622300_DisponibleProductos.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201803030402188_CarritoDeCompra.cs" />
-    <Compile Include="Migrations\201803030402188_CarritoDeCompra.Designer.cs">
-      <DependentUpon>201803030402188_CarritoDeCompra.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201803030437444_CarritoDeCompra1.cs" />
-    <Compile Include="Migrations\201803030437444_CarritoDeCompra1.Designer.cs">
-      <DependentUpon>201803030437444_CarritoDeCompra1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201803030622081_rollbackCarrito.cs" />
-    <Compile Include="Migrations\201803030622081_rollbackCarrito.Designer.cs">
-      <DependentUpon>201803030622081_rollbackCarrito.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\Entity\Carrito.cs" />
-    <Compile Include="Models\Entity\FamiliaTipoArticulo.cs" />
-    <Compile Include="Models\Entity\Producto.cs" />
-    <Compile Include="Models\Entity\TipoProducto.cs" />
-    <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -412,23 +358,23 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\FamiliaTipoArticuloes\Create.cshtml" />
-    <Content Include="Views\FamiliaTipoArticuloes\Delete.cshtml" />
-    <Content Include="Views\FamiliaTipoArticuloes\Details.cshtml" />
-    <Content Include="Views\FamiliaTipoArticuloes\Edit.cshtml" />
-    <Content Include="Views\FamiliaTipoArticuloes\Index.cshtml" />
-    <Content Include="Views\TipoProductoes\Create.cshtml" />
-    <Content Include="Views\TipoProductoes\Delete.cshtml" />
-    <Content Include="Views\TipoProductoes\Details.cshtml" />
-    <Content Include="Views\TipoProductoes\Edit.cshtml" />
-    <Content Include="Views\TipoProductoes\Index.cshtml" />
-    <Content Include="Views\Productoes\Create.cshtml" />
-    <Content Include="Views\Productoes\Delete.cshtml" />
-    <Content Include="Views\Productoes\Details.cshtml" />
-    <Content Include="Views\Productoes\Edit.cshtml" />
-    <Content Include="Views\Productoes\Index.cshtml" />
-    <Content Include="Views\Productoes\ListadoProductos3.cshtml" />
-    <Content Include="Views\Productoes\DisplayTemplates\Boolean.cshtml" />
+    <Content Include="Views\FamiliaTipoArticulo\Create.cshtml" />
+    <Content Include="Views\FamiliaTipoArticulo\Delete.cshtml" />
+    <Content Include="Views\FamiliaTipoArticulo\Details.cshtml" />
+    <Content Include="Views\FamiliaTipoArticulo\Edit.cshtml" />
+    <Content Include="Views\FamiliaTipoArticulo\Index.cshtml" />
+    <Content Include="Views\TipoProducto\Create.cshtml" />
+    <Content Include="Views\TipoProducto\Delete.cshtml" />
+    <Content Include="Views\TipoProducto\Details.cshtml" />
+    <Content Include="Views\TipoProducto\Edit.cshtml" />
+    <Content Include="Views\TipoProducto\Index.cshtml" />
+    <Content Include="Views\Producto\Create.cshtml" />
+    <Content Include="Views\Producto\Delete.cshtml" />
+    <Content Include="Views\Producto\Details.cshtml" />
+    <Content Include="Views\Producto\Edit.cshtml" />
+    <Content Include="Views\Producto\Index.cshtml" />
+    <Content Include="Views\Producto\ListadoProductos3.cshtml" />
+    <Content Include="Views\Producto\DisplayTemplates\Boolean.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -448,42 +394,18 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201803010240136_PrimeraMigracion.resx">
-      <DependentUpon>201803010240136_PrimeraMigracion.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201803010439470_Productos.resx">
-      <DependentUpon>201803010439470_Productos.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201803010549074_ForeingKey_FamiliaArticulo.resx">
-      <DependentUpon>201803010549074_ForeingKey_FamiliaArticulo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201803010808176_01032018_4_57_RodrigoB.resx">
-      <DependentUpon>201803010808176_01032018_4_57_RodrigoB.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201803011912019_Files.resx">
-      <DependentUpon>201803011912019_Files.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201803011927408_FilesOut.resx">
-      <DependentUpon>201803011927408_FilesOut.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201803012309489_NewImageTest.resx">
-      <DependentUpon>201803012309489_NewImageTest.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201803021618576_ValidacionesEntity.resx">
-      <DependentUpon>201803021618576_ValidacionesEntity.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201803021622300_DisponibleProductos.resx">
-      <DependentUpon>201803021622300_DisponibleProductos.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201803030402188_CarritoDeCompra.resx">
-      <DependentUpon>201803030402188_CarritoDeCompra.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201803030437444_CarritoDeCompra1.resx">
-      <DependentUpon>201803030437444_CarritoDeCompra1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201803030622081_rollbackCarrito.resx">
-      <DependentUpon>201803030622081_rollbackCarrito.cs</DependentUpon>
-    </EmbeddedResource>
+    <ProjectReference Include="..\Models\Models.csproj">
+      <Project>{B0C2873F-B920-45FF-9CE4-F4F8570DE7DE}</Project>
+      <Name>Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Persistence\Persistence.csproj">
+      <Project>{20CD4CF8-29D8-464A-90B2-413267CCC43F}</Project>
+      <Name>Persistence</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Service\Service.csproj">
+      <Project>{01C26939-8D35-4C8B-B178-0044A6DBC50D}</Project>
+      <Name>Service</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

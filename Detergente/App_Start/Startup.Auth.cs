@@ -6,6 +6,9 @@ using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
 using Owin;
 using Detergente.Models;
+using Persistence;
+using Service.Auth;
+using Models;
 
 namespace Detergente
 {
