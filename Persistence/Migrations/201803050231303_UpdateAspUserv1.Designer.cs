@@ -7,13 +7,13 @@ namespace Persistence.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.0-30225")]
-    public sealed partial class Iniciar : IMigrationMetadata
+    public sealed partial class UpdateAspUserv1 : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Iniciar));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(UpdateAspUserv1));
         
         string IMigrationMetadata.Id
         {
-            get { return "201803050114585_Iniciar"; }
+            get { return "201803050231303_UpdateAspUserv1"; }
         }
         
         string IMigrationMetadata.Source
