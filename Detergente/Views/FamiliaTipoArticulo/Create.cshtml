@@ -6,11 +6,12 @@
 
 <h2>Create</h2>
 
+<a>Hola @Common.CurrentUser.Get.Name  </a>
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>FamiliaTipoArticulo</h4>
         <hr />

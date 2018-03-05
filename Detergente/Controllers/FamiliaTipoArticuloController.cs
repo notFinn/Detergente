@@ -12,6 +12,7 @@ namespace Detergente.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: FamiliaTipoArticuloes
+        
         public ActionResult Index()
         {
             return View(db.FamiliaTipoArticulo.ToList());
@@ -33,6 +34,7 @@ namespace Detergente.Controllers
         }
 
         // GET: FamiliaTipoArticuloes/Create
+        [Authorize]
         public ActionResult Create()
         {
             return View();
@@ -43,6 +45,7 @@ namespace Detergente.Controllers
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult Create([Bind(Include = "Id,NombreFamilia")] FamiliaTipoArticulo familiaTipoArticulo)
         {
             if (ModelState.IsValid)

@@ -12,10 +12,13 @@
     <div class="col-md-4">
         <h2>Getting started</h2>
         <p>
-            if(@Common.CurrentUser.Get.Name =! null){
-                @Common.CurrentUser.Get.Name
-            }
-        </p>
+                @if (Request.IsAuthenticated) {
+                    <h1>
+                        Hola
+                    </h1>
+                    <p class="lead"> "Tanto tiempo sin verte",@Common.CurrentUser.Get.Name</p>
+                }
+
     </div>
     <div class="col-md-4">
         <h2>Get more libraries</h2>
