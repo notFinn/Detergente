@@ -54,6 +54,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicactionUser.cs" />
+    <Compile Include="ApplicationRole.cs" />
     <Compile Include="Carrito.cs" />
     <Compile Include="FamiliaTipoArticulo.cs" />
     <Compile Include="Producto.cs" />

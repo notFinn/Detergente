@@ -33,7 +33,6 @@ namespace Persistence
             modelBuilder.Entity<TipoProducto>().HasRequired(x => x.FamiliaTipoArticulo).WithMany().HasForeignKey(x => x.IdFamilia);
             modelBuilder.Entity<Producto>().HasRequired(x => x.TipoProducto).WithMany().HasForeignKey(x => x.IdTipoProducto);
             base.OnModelCreating(modelBuilder);
-            modelBuilder.Entity<ApplicationUser>();
         }
     }
 }

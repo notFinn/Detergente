@@ -35,6 +35,19 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <PublishDatabaseSettings>
+      <Objects>
+        <ObjectGroup Name="DefaultConnection-Implementación" Order="1" xmlns="">
+          <Destination Path="Data Source=FINN\SQLEXPRESS%3bInitial Catalog=DetergenteP%3bPersist Security Info=True%3bUser ID=sa%3bPassword=alejandro12" />
+          <Object Type="DbFullSql">
+            <PreSource Path="Data Source=FINN\SQLEXPRESS%3bInitial Catalog=Curso1.Models.ApplicationDbContext%3bPersist Security Info=True%3bUser ID=sa%3bPassword=alejandro12" ScriptSchema="True" ScriptData="True" CopyAllFullTextCatalogs="False" DriDefaults="True" />
+            <Source Path="obj\Debug\AutoScripts\DefaultConnection-Implementación_SchemaAndData.sql" Transacted="True" />
+          </Object>
+        </ObjectGroup>
+      </Objects>
+    </PublishDatabaseSettings>
+    <IncludeIisSettings>true</IncludeIisSettings>
+    <FilesToIncludeForPublish>AllFilesInTheProject</FilesToIncludeForPublish>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -44,6 +57,17 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <PublishDatabaseSettings>
+      <Objects>
+        <ObjectGroup Name="DefaultConnection-Implementación" Order="1">
+          <Destination Path="Data Source=FINN\SQLEXPRESS%3bInitial Catalog=DetergenteP%3bPersist Security Info=True%3bUser ID=sa%3bPassword=alejandro12" />
+          <Object Type="DbFullSql">
+            <PreSource Path="Data Source=FINN\SQLEXPRESS%3binitial catalog=DetergenteP%3buser id=sa%3bpassword=alejandro12%3bApp=EntityFramework" ScriptSchema="True" ScriptData="True" CopyAllFullTextCatalogs="False" DriDefaults="True" />
+            <Source Path="obj\Release\AutoScripts\DefaultConnection-Implementación_SchemaAndData.sql" Transacted="True" />
+          </Object>
+        </ObjectGroup>
+      </Objects>
+    </PublishDatabaseSettings>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -379,6 +403,8 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Images\" />
+    <Folder Include="Properties\PublishProfiles\" />
+    <Folder Include="Views\User\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

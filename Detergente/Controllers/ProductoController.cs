@@ -20,6 +20,7 @@ namespace Detergente.Controllers
         // GET: Productoes
         public ActionResult Index()
         {
+
             var producto = db.Producto.Include(p => p.TipoProducto);
             return View(producto.ToList());
         }
@@ -156,7 +157,9 @@ namespace Detergente.Controllers
         [HttpPost]
         public ActionResult Agregar(Producto producto)
         {
-            AgregarCarro.Agregar(producto);
+
+            var se = Session.SessionID;
+            AgregarCarro.Agregar(producto,se);
 
             
 

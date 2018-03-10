@@ -10,13 +10,16 @@ namespace Models
         public DateTime FechaCrecion { get; set; }
         public Producto Producto { get; set; }
 
-        public Carrito(int idCarrito, int idProduco, int cantidad, DateTime fechaCrecion, Producto producto)
+        public string Sesion { get; set; }
+
+        public Carrito(int idCarrito, int idProduco, int cantidad, DateTime fechaCrecion, Producto producto,string sesion)
         {
             IdCarrito = idCarrito;
             IdProduco = idProduco;
             Cantidad = cantidad;
             FechaCrecion = fechaCrecion;
             Producto = producto;
+            Sesion = sesion;
         }
     }
 }

@@ -58,6 +58,10 @@
     <Compile Include="Migrations\201803050231303_UpdateAspUserv1.Designer.cs">
       <DependentUpon>201803050231303_UpdateAspUserv1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201803070212574_MartesActuRequerida.cs" />
+    <Compile Include="Migrations\201803070212574_MartesActuRequerida.Designer.cs">
+      <DependentUpon>201803070212574_MartesActuRequerida.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -74,6 +78,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201803050231303_UpdateAspUserv1.resx">
       <DependentUpon>201803050231303_UpdateAspUserv1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803070212574_MartesActuRequerida.resx">
+      <DependentUpon>201803070212574_MartesActuRequerida.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
