@@ -6,9 +6,9 @@ using System.Collections.Generic;
 namespace Detergente.Metodos
 {
     public static partial class AgregarCarro
-    { 
+    {
         static int contar;
-        public static string Agregar(Producto producto,string sesion) {
+        public static string Agregar(Producto producto, string sesion) {
             contar = +1;
             List<Carrito> Lista;
 
@@ -24,10 +24,10 @@ namespace Detergente.Metodos
             {
                 if (lpro.IdProduco == producto.Id)
                 {
-                    lpro.Cantidad = lpro.Cantidad+1;
+                    lpro.Cantidad = lpro.Cantidad + 1;
                     return JsonConvert.SerializeObject(Lista, Formatting.Indented);
                 }
-                
+
             }
             var carrito = new Carrito(contar, producto.Id, 1, DateTime.Now, producto);
             Lista.Add(carrito);
@@ -45,7 +45,7 @@ namespace Detergente.Metodos
             if (json == null)
                 return 0;
             else {
-                    Lista = JsonConvert.DeserializeObject<List<Carrito>>(json);
+                Lista = JsonConvert.DeserializeObject<List<Carrito>>(json);
             }
             int cont = 0;
             foreach (var pro in Lista)
@@ -68,10 +68,24 @@ namespace Detergente.Metodos
             int cont = 0;
             foreach (var pro in Lista)
             {
-                cont = (int)(cont + (pro.Cantidad*pro.Producto.Precio));
+                cont = (int)(cont + (pro.Cantidad * pro.Producto.Precio));
             }
 
             return cont;
+        }
+
+        public static List<Carrito> ProductosCarritosJson(string json) {
+            List<Carrito> Lista;
+            if (json == null)
+                return null;
+            else
+            {
+                Lista = JsonConvert.DeserializeObject<List<Carrito>>(json);
+            }
+            
+
+            return Lista;
+
         }
     }
 }

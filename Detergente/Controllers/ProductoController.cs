@@ -179,21 +179,21 @@ namespace Detergente.Controllers
             }
             base.Dispose(disposing);
         }
-        public ActionResult ListadoProductos3() {
+        public ActionResult ListaProductos() {
 
             var producto = db.Producto.Include(p => p.TipoProducto);
             return View(producto.ToList());
         }
 
         [HttpPost]
-        public ActionResult Agregar(Producto producto)
+        public ActionResult Agregar(Producto producto, int Id)
         {
             sessionValue = (String)System.Web.HttpContext.Current.Session["Carrito"];
             //var se = Session.SessionID;
             string json = AgregarCarro.Agregar(producto, sessionValue);
 
             System.Web.HttpContext.Current.Session["Carrito"] = json;
-            return RedirectToAction("ListadoProductos3");
+            return RedirectToAction("ListaProductos");
         }
     }
 }

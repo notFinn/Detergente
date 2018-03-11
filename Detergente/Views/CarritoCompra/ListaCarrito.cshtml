@@ -1,0 +1,61 @@
+﻿@model IEnumerable<Models.Carrito>
+@using Detergente.Metodos
+@{ 
+    var ListaJson = AgregarCarro.ProductosCarritosJson((string)System.Web.HttpContext.Current.Session["Carrito"]);
+    var Total = AgregarCarro.TotalizarCarrito((string)System.Web.HttpContext.Current.Session["Carrito"]);
+
+}
+
+<table class="table">
+    <tr>
+        <th>
+            
+        </th>
+        <th>
+            Producto
+        </th>
+        <th>
+           Cantidad
+        </th>
+        <th>
+           Precio Unitario
+        </th>
+        <th>
+            Precio Total
+        </th>
+    </tr>
+
+@foreach (var item in ListaJson)
+{
+    <tr>
+        <td>
+            <img src="/Images/@item.Producto.ImagePath" height="150" width="150">
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Producto.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cantidad)
+        </td>
+        <td>
+            $@Html.DisplayFor(modelItem => item.Producto.Precio)
+        </td>
+        <td>
+            @{
+                var pre = (int)item.Producto.Precio;
+                var canti = item.Cantidad;
+                var multi = pre * canti;
+
+            }
+
+            $@multi
+        </td>
+    </tr>
+    }@*fin foreach*@
+    <tr>
+    <td></td>
+    <td>Total :</td>
+    <td>$@Total</td>
+</tr>
+
+</table>
