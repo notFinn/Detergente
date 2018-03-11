@@ -1,0 +1,33 @@
+﻿@using Microsoft.AspNet.Identity
+@using Detergente.Metodos
+@{ 
+
+    var total = AgregarCarro.ContarCarrito((string)System.Web.HttpContext.Current.Session["Carrito"]);
+    var precio = AgregarCarro.TotalizarCarrito((string)System.Web.HttpContext.Current.Session["Carrito"]);
+
+
+}
+@if (Request.IsAuthenticated)
+
+{
+    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+    {
+        @Html.AntiForgeryToken()
+
+        <ul class="nav navbar-nav navbar-right">
+            <li>
+                @Html.ActionLink("Carrito" + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+            </li>
+            <li><a href="javascript:document.getElementById('logoutForm').submit()">Cerrar sesión</a></li>
+        </ul>
+    }
+}
+else
+{
+  
+    <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span>Mi Carro @total $@precio</a></li>
+       
+    </ul>
+}
+

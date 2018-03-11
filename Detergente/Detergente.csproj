@@ -399,6 +399,7 @@
     <Content Include="Views\Producto\Index.cshtml" />
     <Content Include="Views\Producto\ListadoProductos3.cshtml" />
     <Content Include="Views\Producto\DisplayTemplates\Boolean.cshtml" />
+    <Content Include="Views\Shared\_Carrito.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
