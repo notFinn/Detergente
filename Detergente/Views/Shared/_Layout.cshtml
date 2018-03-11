@@ -28,13 +28,14 @@
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Inicio", "Index", "Home")</li>
                     <li>@Html.ActionLink("Acerca de", "About", "Home")</li>
+
                     <li>@Html.ActionLink("Productos", "Index", "Producto")</li>
                     <li>@Html.ActionLink("Tipo Productos", "Index", "TipoProducto")</li>
                     <li>@Html.ActionLink("Familia De producto", "Index", "FamiliaTipoArticulo")</li>
                 </ul>
                 @Html.Partial("_LoginPartial")
                 @Html.Partial("_Carrito")
-
+               
             </div>
         </div>
     </div>

@@ -4,68 +4,32 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<h2>Detalle Productos</h2>
 
 <div>
     <h4>Producto</h4>
     <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.TipoProducto.NombreTipo)
-        </dt>
+    
+    <div class="row">
 
-        <dd>
-            @Html.DisplayFor(model => model.TipoProducto.NombreTipo)
-        </dd>
+        <div class="col-md-8">
+            <img class="img-responsive" src="/Images/@Html.DisplayFor(model => model.ImagePath)">
+        </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Nombre)
-        </dt>
+        <div class="col-md-4">
+            <h3>@Html.DisplayFor(model => model.Nombre)</h3>
 
-        <dd>
-            @Html.DisplayFor(model => model.Nombre)
-        </dd>
+            <p>@Html.DisplayFor(model => model.Descripcion)</p>
+            <h3>Detalle</h3>
+            <ul>
+                <li>Precio : @Html.DisplayNameFor(model => model.Precio)</li>
+                <li>Stock  : @Html.DisplayNameFor(model => model.TipoProducto)</li>
+                <li>Tipo   : @Html.DisplayFor(model => model.TipoProducto.NombreTipo)</li>
+                <li>Adipiscing Elit</li>
+            </ul>
+        </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Descripcion)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Descripcion)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Cantidad)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Cantidad)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Precio)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Precio)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.FechaActualizacion)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.FechaActualizacion)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.ImagePath)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ImagePath)
-        </dd>
-
-    </dl>
+    </div>
 </div>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
