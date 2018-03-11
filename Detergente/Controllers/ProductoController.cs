@@ -15,16 +15,47 @@ namespace Detergente.Controllers
 {
     public class ProductoController : Controller
     {
+        
         private ApplicationDbContext db = new ApplicationDbContext();
+        private string sessionValue;
 
         // GET: Productoes
         public ActionResult Index()
         {
 
             var producto = db.Producto.Include(p => p.TipoProducto);
+            var TipoPro = db.TipoProducto.OrderBy(q => q.NombreTipo).ToList();
+            ViewBag.SelectTipo = new SelectList(TipoPro, "Id", "NombreTipo");
+
             return View(producto.ToList());
         }
+        [HttpPost]
+        public ActionResult Index(int? SelectTipo)
+        {
+            if (SelectTipo == null)
+            {
+                var producto = db.Producto.Include(p => p.TipoProducto);
+                var TipoPro = db.TipoProducto.OrderBy(q => q.NombreTipo).ToList();
+                ViewBag.SelectTipo = new SelectList(TipoPro, "Id", "NombreTipo", SelectTipo);
+                int tipoId = SelectTipo.GetValueOrDefault();
+                return View(producto.ToList());
+            }
+            else {
+                var TipoPro = db.TipoProducto.OrderBy(q => q.NombreTipo).ToList();
+                ViewBag.SelectTipo = new SelectList(TipoPro, "Id", "NombreTipo", SelectTipo);
+                int tipoId = SelectTipo.GetValueOrDefault();
 
+                IQueryable<Producto> producto = db.Producto
+                    .Where(t => !SelectTipo.HasValue || t.IdTipoProducto == tipoId)
+                    .OrderBy(p => p.Id)
+                    .Include(p => p.TipoProducto);
+                var sql = producto.ToString();
+
+                return View(producto.ToList());
+            }
+            
+            
+        }
         // GET: Productoes/Details/5
         public ActionResult Details(int? id)
         {
@@ -153,16 +184,15 @@ namespace Detergente.Controllers
             var producto = db.Producto.Include(p => p.TipoProducto);
             return View(producto.ToList());
         }
-         
+
         [HttpPost]
         public ActionResult Agregar(Producto producto)
         {
+            sessionValue = (String)System.Web.HttpContext.Current.Session["Carrito"];
+            //var se = Session.SessionID;
+            string json = AgregarCarro.Agregar(producto, sessionValue);
 
-            var se = Session.SessionID;
-            AgregarCarro.Agregar(producto,se);
-
-            
-
+            System.Web.HttpContext.Current.Session["Carrito"] = json;
             return RedirectToAction("ListadoProductos3");
         }
     }

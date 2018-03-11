@@ -7,8 +7,16 @@
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create",null, new { @class = "btn btn-success" })
+    @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-success" })
 </p>
+@using (Html.BeginForm()){
+<p>
+    Seleccione Tipo: @Html.DropDownList("SelectTipo", "All")
+    <input type="submit" value="Filtrar" />
+</p>
+}
+
+
 <div class="panel panel-default">
     <div class="panel-heading">
         <table class="table">
@@ -28,7 +36,7 @@
                 <th>
                     @Html.DisplayNameFor(model => model.Precio)
                 </th>
-            
+
                 <th>
                     @Html.DisplayNameFor(model => model.ImagePath)
 
@@ -44,35 +52,35 @@
                     claseFila = "danger";
                 }
 
-            <tr class="@claseFila">
-                <td>
-                    @Html.DisplayFor(modelItem => item.TipoProducto.NombreTipo)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Nombre)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Descripcion)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Cantidad)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Precio)
-                </td>
-              
-                <td>
+                <tr class="@claseFila">
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TipoProducto.NombreTipo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nombre)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Descripcion)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Cantidad)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Precio)
+                    </td>
 
-                    <img src="/Images/@item.ImagePath" height="100" width="100">
-                </td>
+                    <td>
 
-                <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-success" })
-                    @Html.ActionLink("Details", "Details", new { id = item.Id }, new { @class = "btn btn-info" })
-                    @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-danger" })
-                </td>
-            </tr>
-    }
+                        <img src="/Images/@item.ImagePath" height="100" width="100">
+                    </td>
+
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-success" })
+                        @Html.ActionLink("Details", "Details", new { id = item.Id }, new { @class = "btn btn-info" })
+                        @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-danger" })
+                    </td>
+                </tr>
+            }
 
         </table>
     </div>
