@@ -16,8 +16,8 @@ namespace Models
         [DataType(DataType.MultilineText)]
         public string Descripcion { get; set; }
         public int? Cantidad { get; set; }
-        [DisplayFormat(DataFormatString = "{0:####}")]
-        public decimal Precio { get; set; }
+        //[DisplayFormat(DataFormatString = "{0:####}")]
+        public int Precio { get; set; }
         [Display(Name = "Tipo de Producto")]
         public int? IdTipoProducto { get; set; }
         public TipoProducto TipoProducto { get; set; }

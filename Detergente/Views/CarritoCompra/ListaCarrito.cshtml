@@ -5,57 +5,71 @@
     var Total = AgregarCarro.TotalizarCarrito((string)System.Web.HttpContext.Current.Session["Carrito"]);
 
 }
+@if (ListaJson==null) {
+<div>
+    <p>No tiene nada en su carrito de compra aprete el volver para regresar al inicio</p>
 
-<table class="table">
-    <tr>
-        <th>
-            
-        </th>
-        <th>
-            Producto
-        </th>
-        <th>
-           Cantidad
-        </th>
-        <th>
-           Precio Unitario
-        </th>
-        <th>
-            Precio Total
-        </th>
-    </tr>
+    @Html.ActionLink("Volver al inico", "Index","Home")
+</div>
+}
+else{
+<div class="table-responsive">
+    <table class="table table-bordered">
+        <thead class="thead-dark">
+            <tr>
+                <th>
 
-@foreach (var item in ListaJson)
-{
-    <tr>
-        <td>
-            <img src="/Images/@item.Producto.ImagePath" height="150" width="150">
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Producto.Nombre)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Cantidad)
-        </td>
-        <td>
-            $@Html.DisplayFor(modelItem => item.Producto.Precio)
-        </td>
-        <td>
-            @{
-                var pre = (int)item.Producto.Precio;
-                var canti = item.Cantidad;
-                var multi = pre * canti;
+                </th>
+                <th>
+                    Producto
+                </th>
+                <th>
+                    Cantidad
+                </th>
+                <th>
+                    Precio Unitario
+                </th>
+                <th>
+                    Precio Total
+                </th>
+            </tr>
+        </thead>
 
-            }
 
-            $@multi
-        </td>
-    </tr>
-    }@*fin foreach*@
-    <tr>
-    <td></td>
-    <td>Total :</td>
-    <td>$@Total</td>
-</tr>
+        @foreach (var item in ListaJson)
+        {
+            <tr>
+                <td>
+                    <img src="/Images/@item.Producto.ImagePath" height="150" width="150">
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Producto.Nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cantidad)
+                </td>
+                <td>
+                    $@Html.DisplayFor(modelItem => item.Producto.Precio)
+                </td>
+                <td>
+                    @{
+                        var pre = (int)item.Producto.Precio;
+                        var canti = item.Cantidad;
+                        var multi = pre * canti;
 
-</table>
+                    }
+
+                    $@multi
+                </td>
+            </tr>
+        }@*fin foreach*@
+        <tr class="bg-warning">
+            <td></td>
+            <td>Total :</td>
+            <td>$@Total</td>
+        </tr>
+
+    </table>
+</div>
+}
+
