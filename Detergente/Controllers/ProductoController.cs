@@ -185,7 +185,7 @@ namespace Detergente.Controllers
             return View(producto.ToList());
         }
 
-        [HttpGet]
+        [HttpPost]
         public ActionResult Agregar(Producto producto, int Id,int? Precio)
         {
             sessionValue = (String)System.Web.HttpContext.Current.Session["Carrito"];

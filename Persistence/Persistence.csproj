@@ -66,6 +66,14 @@
     <Compile Include="Migrations\201803120226143_Producto.Designer.cs">
       <DependentUpon>201803120226143_Producto.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201803130258014_newTablasDetalleCarrito_Direccion_Pedido.cs" />
+    <Compile Include="Migrations\201803130258014_newTablasDetalleCarrito_Direccion_Pedido.Designer.cs">
+      <DependentUpon>201803130258014_newTablasDetalleCarrito_Direccion_Pedido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803130305241_newTablasDetalleCarrito_Direccion_Pedido1.cs" />
+    <Compile Include="Migrations\201803130305241_newTablasDetalleCarrito_Direccion_Pedido1.Designer.cs">
+      <DependentUpon>201803130305241_newTablasDetalleCarrito_Direccion_Pedido1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -88,6 +96,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201803120226143_Producto.resx">
       <DependentUpon>201803120226143_Producto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803130258014_newTablasDetalleCarrito_Direccion_Pedido.resx">
+      <DependentUpon>201803130258014_newTablasDetalleCarrito_Direccion_Pedido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803130305241_newTablasDetalleCarrito_Direccion_Pedido1.resx">
+      <DependentUpon>201803130305241_newTablasDetalleCarrito_Direccion_Pedido1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
