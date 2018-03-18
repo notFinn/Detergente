@@ -369,6 +369,7 @@
     <Content Include="Scripts\locales\bootstrap-datepicker.vi.min.js" />
     <Content Include="Scripts\locales\bootstrap-datepicker.zh-CN.min.js" />
     <Content Include="Scripts\locales\bootstrap-datepicker.zh-TW.min.js" />
+    <Content Include="Scripts\mapCalcularDistancia.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\popper-utils.js" />
     <Content Include="Scripts\popper-utils.min.js" />
@@ -459,6 +460,10 @@
     <ProjectReference Include="..\Common\Common.csproj">
       <Project>{53626360-7E4F-4436-9F2A-9D96913BAC2A}</Project>
       <Name>Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Mapa\Mapa.csproj">
+      <Project>{E681D0FC-8172-4225-8082-80763D26AF0D}</Project>
+      <Name>Mapa</Name>
     </ProjectReference>
     <ProjectReference Include="..\Models\Models.csproj">
       <Project>{B0C2873F-B920-45FF-9CE4-F4F8570DE7DE}</Project>

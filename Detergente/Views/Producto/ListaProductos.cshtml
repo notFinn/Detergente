@@ -13,13 +13,15 @@
 
     @using (Html.BeginForm("Agregar", "Producto", FormMethod.Post))
     {
-        <div class="container">
+        <div class="jumbotron">
             <div class="row">
                 @foreach (var item in Model)
                 {
 
                     using (Html.BeginForm("Agregar", "Producto", FormMethod.Post))
                     {
+
+                        var acortarN = String.Concat(item.Nombre.Take(25));
                         <div class="col-sm-6 col-md-4">
                             <div class="thumbnail">
                                 <img src="/Images/@item.ImagePath" height="300" width="300">
@@ -30,14 +32,13 @@
                                 @Html.HiddenFor(modelItem => item.IdTipoProducto, new { @Id = "IdTipoProducto", @Name = "IdTipoProducto" })
                                 @Html.HiddenFor(modelItem => item.Precio, new { @Id = "Precio", @Name = "Precio" })
 
-                                <h3>@Html.DisplayFor(modelItem => item.Nombre)</h3>
+                                <h3 title="@item.Nombre">@Html.DisplayFor(modelItem => acortarN)</h3>
                                 @Html.HiddenFor(modelItem => item.Nombre, new { @Id = "Nombre", @Name = "Nombre" })
 
-                                <p>  @Html.DisplayFor(modelItem => item.Descripcion)</p>
-                                @Html.HiddenFor(modelItem => item.Descripcion, new { @Id = "Descripcion", @Name = "Descripcion" })
+                               
 
-                                <h4>
-                                    $@Html.DisplayFor(modelItem => item.Precio, new { @Id = "Precio", @Name = "Precio" })
+                                <h4 class="text-danger" >
+                                    $@Html.DisplayFor(modelItem => item.Precio, new { @Id = "Precio", @Name = "Precio" , @class = "danger" })
                                 </h4>
                                 <p>
 

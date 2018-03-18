@@ -11,34 +11,23 @@
         background-color: #CCC;
     }
 </style>
+
 <div class="jumbotron">
-    <form class="form-inline" action="#" method="post">
-        <input type="text" class="form-control" placeholder="Address" />
-        <button class="btn btn-primary" type="button">Buscar</button>
-    </form>
+    @using (Html.BeginForm("CalcularDistancia", "Direccion", FormMethod.Post, new { @Class = "form-inline" }))
+    {
+        <input type="text" class="form-control" id="Direccion" name="Direccion" placeholder="Direccion" />
+        <button class="btn btn-primary" type="submit">Buscar</button>
+    }
     <br />
+    @if (ViewBag.Message!=null)
+    {
+        <h3>@ViewBag.Message</h3>
+        <br />
+    }
     <div class="row">
         <div id="map-canvas"></div>
     </div>
 </div>
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJEX5MZtX7pA13_QW0hXWtQzjeTwvuxiI"></script>
-<script>
-    function initialize() {
-        var mapCanvas = document.getElementById('map-canvas');
-        var posi = new google.maps.LatLng(-33.572429, -70.566485);
-        var mapOpcions = {
-            center: posi,
-            zoom: 15,
-            mapTypeId: google.maps.MapTypeId.ROADMAP
-        }
-        var map = new google.maps.Map(mapCanvas, mapOpcions)
-        var marker = new google.maps.Marker({
-            position: posi,
-            //label: labels('hola'),
-            map: map
-        });
-
-    }
-    google.maps.event.addDomListener(window, 'load', initialize);
-</script>
+<script src="~/Scripts/mapCalcularDistancia.js"></script>
